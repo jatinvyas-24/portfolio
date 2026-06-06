@@ -5,9 +5,18 @@ import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 gsap.registerPlugin(MorphSVGPlugin);
 
 const greetings = [
-  "Hello", "नमस्ते", "Hola", "Bonjour",
-  "Ciao", "Olá", "Здравствуйте",
-  "Merhaba", "Γειά", "Hej", "Hallo", "Salam"
+  "Hello",
+  "नमस्ते",
+  "Hola",
+  "Bonjour",
+  "Ciao",
+  "Olá",
+  "Здравствуйте",
+  "Merhaba",
+  "Γειά",
+  "Hej",
+  "Hallo",
+  "Salam",
 ];
 
 export default function IntroAnimation({ onFinish }) {
@@ -22,14 +31,14 @@ export default function IntroAnimation({ onFinish }) {
       gsap.fromTo(
         greetingRef.current,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.12 }
+        { opacity: 1, y: 0, duration: 0.12 },
       );
-      greetingTimer = setTimeout(() => setIndex(i => i + 1), 180);
+      greetingTimer = setTimeout(() => setIndex((i) => i + 1), 180);
     } else {
       gsap.fromTo(
         greetingRef.current,
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.12 }
+        { opacity: 1, y: 0, duration: 0.12 },
       );
 
       greetingTimer = setTimeout(() => {
@@ -48,7 +57,7 @@ export default function IntroAnimation({ onFinish }) {
             morphSVG: "M0,0 L0,300 Q720,900 1440,300 L1440,0 Z",
             ease: "power4.inOut",
           },
-          "<"
+          "<",
         );
       }, 300);
     }
@@ -78,4 +87,3 @@ export default function IntroAnimation({ onFinish }) {
     </div>
   );
 }
- 

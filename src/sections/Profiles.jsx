@@ -8,41 +8,46 @@ const profiles = [
     name: "LinkedIn",
     icon: <FaLinkedinIn />,
     handle: "jatin vyas",
-    description: "Professional networking, corporate updates, and industry connection hub.",
+    description:
+      "Professional networking, corporate updates, and industry connection hub.",
     url: "https://www.linkedin.com/in/jatin-vyas-1a4043327/",
-    color: "#0A66C2", // Official LinkedIn Blue
+    color: "#0A66C2",
   },
   {
     name: "LeetCode",
     icon: <SiLeetcode />,
     handle: "jatin_vyas24",
-    description: "Algorithmic problem-solving profile, DSA challenges, and technical skills refinement.",
+    description:
+      "Algorithmic problem-solving profile, DSA challenges, and technical skills refinement.",
     url: "https://leetcode.com/u/jatin_vyas24/",
-    color: "#FFA116", // Official LeetCode Orange
+    color: "#FFA116",
   },
   {
     name: "GitHub",
     icon: <FaGithub />,
     handle: "jatinvyas-24",
-    description: "Open-source contributions, developer projects, and version control repository hosting.",
+    description:
+      "Open-source contributions, developer projects, and version control repository hosting.",
     url: "https://github.com/jatinvyas-24",
-    color: "#FFFFFF", // GitHub White
+    color: "#FFFFFF",
   },
   {
     name: "CodeChef",
     icon: <SiCodechef />,
     handle: "jatinvyas_24",
-    description: "Competitive programming contests, problem-solving, and globally ranked tournaments.",
+    description:
+      "Competitive programming contests, problem-solving, and globally ranked tournaments.",
     url: "https://www.codechef.com/users/jatinvyas_24",
-    color: "#D1A153", // CodeChef gold-bronze glow
+    color: "#D1A153",
   },
   {
     name: "GeeksforGeeks",
     icon: <SiGeeksforgeeks />,
     handle: "jatinvyas24",
-    description: "Algorithm practice, data structures, and computer science tutorial platforms.",
+    description:
+      "Algorithm practice, data structures, and computer science tutorial platforms.",
     url: "https://www.geeksforgeeks.org/profile/jatinvyas24?tab=activity",
-    color: "#2F8D46", // Official GeeksforGeeks Green
+    color: "#2F8D46",
   },
 ];
 
@@ -54,13 +59,11 @@ export default function Profiles() {
       id="profiles"
       className="relative min-h-screen w-full bg-black text-white flex flex-col items-center justify-center py-24 px-6 md:px-12 lg:px-20 overflow-hidden"
     >
-      {/* Dynamic Background Neon Accents */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-1/4 right-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#302b63]/20 via-[#00bf8f]/15 to-[#1cd8d2]/10 blur-[130px] animate-pulse" />
         <div className="absolute bottom-1/4 left-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#1cd8d2]/20 via-[#302b63]/15 to-[#00bf8f]/10 blur-[130px] animate-pulse delay-700" />
       </div>
 
-      {/* Header Container */}
       <div className="relative z-10 text-center max-w-2xl mx-auto mb-16">
         <motion.h2
           initial={{ opacity: 0, y: -25 }}
@@ -73,7 +76,6 @@ export default function Profiles() {
         </motion.h2>
       </div>
 
-      {/* Branded Profiles Grid */}
       <div className="relative z-10 w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 justify-items-center">
         {profiles.map((profile, idx) => (
           <motion.a
@@ -89,14 +91,17 @@ export default function Profiles() {
             onMouseLeave={() => setHoveredIndex(null)}
             whileHover={{ y: -5, scale: 1.02 }}
             style={{
-              borderColor: hoveredIndex === idx ? profile.color : "rgba(255, 255, 255, 0.08)",
-              boxShadow: hoveredIndex === idx
-                ? `0 15px 30px -10px ${profile.color}33, 0 0 20px ${profile.color}15`
-                : "0 4px 20px -10px rgba(0, 0, 0, 0.4)",
+              borderColor:
+                hoveredIndex === idx
+                  ? profile.color
+                  : "rgba(255, 255, 255, 0.08)",
+              boxShadow:
+                hoveredIndex === idx
+                  ? `0 15px 30px -10px ${profile.color}33, 0 0 20px ${profile.color}15`
+                  : "0 4px 20px -10px rgba(0, 0, 0, 0.4)",
             }}
             className="relative w-full max-w-[340px] flex flex-row items-center gap-3.5 sm:gap-5 p-4 sm:p-5 rounded-2xl border bg-white/5 backdrop-blur-md cursor-pointer transition-all duration-300 group overflow-hidden"
           >
-            {/* Interactive Glow Background Spill on Hover */}
             <div
               style={{
                 background: `radial-gradient(circle at 20% 50%, ${profile.color}15 0%, transparent 60%)`,
@@ -105,7 +110,6 @@ export default function Profiles() {
               className="absolute inset-0 pointer-events-none transition-opacity duration-300 z-0"
             />
 
-            {/* Platform Icon */}
             <div
               style={{ color: profile.color }}
               className="text-5xl relative z-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 flex-shrink-0"
@@ -113,12 +117,18 @@ export default function Profiles() {
               {profile.icon}
             </div>
 
-            {/* Text Information container */}
             <div className="flex flex-col justify-center relative z-10 w-full overflow-hidden">
-              {/* Username/Handle */}
-              <h3 className="text-base sm:text-lg font-bold text-white tracking-wide truncate w-full">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-gray-400 group-hover:text-white/80 transition-colors">
+                {profile.name}
+              </span>
+
+              <h3 className="text-base sm:text-lg font-bold text-white tracking-wide truncate w-full mt-0.5">
                 {profile.handle}
               </h3>
+
+              <p className="text-[11px] text-gray-400 mt-1 leading-relaxed line-clamp-2 group-hover:text-gray-300 transition-colors">
+                {profile.description}
+              </p>
             </div>
           </motion.a>
         ))}
@@ -126,4 +136,3 @@ export default function Profiles() {
     </section>
   );
 }
- 

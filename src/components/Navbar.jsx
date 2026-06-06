@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import OverlayMenu from "./OverlayMenu";
 import { FiMenu } from "react-icons/fi";
-import Logo from "../assets/Logo.svg"; // Adjust path
+import Logo from "../assets/Logo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,7 +11,14 @@ export default function Navbar() {
   const lastScrollY = useRef(0);
   const timerId = useRef(null);
 
-  const navLinks = ["Home", "About", "Skills", "Projects", "Profiles", "Contact"];
+  const navLinks = [
+    "Home",
+    "About",
+    "Skills",
+    "Projects",
+    "Profiles",
+    "Contact",
+  ];
 
   useEffect(() => {
     const handleScrollState = () => {
@@ -32,12 +39,12 @@ export default function Navbar() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setForceVisible(true);
-          setVisible(true); // Always visible on homepage
+          setVisible(true);
         } else {
           setForceVisible(false);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (homeSection) observer.observe(homeSection);
@@ -49,7 +56,6 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // If on homepage, never hide navbar
       if (forceVisible) {
         setVisible(true);
         return;
@@ -58,13 +64,10 @@ export default function Navbar() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY.current) {
-        // scrolling down -> hide
         setVisible(false);
       } else {
-        // scrolling up -> show
         setVisible(true);
 
-        // hide again after 3sec idle
         if (timerId.current) clearTimeout(timerId.current);
         timerId.current = setTimeout(() => {
           setVisible(false);
@@ -87,12 +90,11 @@ export default function Navbar() {
         className={`fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-12 z-50 transition-all duration-350 ${
           visible ? "translate-y-0" : "-translate-y-full"
         } ${
-          isScrolled 
-            ? "bg-black/45 backdrop-blur-md py-3 shadow-lg shadow-black/25" 
+          isScrolled
+            ? "bg-black/45 backdrop-blur-md py-3 shadow-lg shadow-black/25"
             : "bg-transparent py-5"
         }`}
       >
-        {/* Logo */}
         <div className="flex items-center space-x-2">
           <img src={Logo} alt="Logo" className="w-8 h-8" />
           <div className="text-2xl font-bold text-white hidden sm:block">
@@ -100,7 +102,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Center Desktop Navigation Links */}
         <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
@@ -109,13 +110,12 @@ export default function Navbar() {
               className="text-sm font-semibold text-gray-300 hover:text-white transition-colors duration-300 relative group"
             >
               {link}
-              {/* Underline animated gradient hover */}
+
               <span className="absolute bottom-[-6px] left-0 w-0 h-[2px] bg-gradient-to-r from-[#1CD8D2] to-[#00bf8f] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
 
-        {/* Right Side Call-to-Actions (Desktop Contact Button & Mobile Hamburger) */}
         <div className="flex items-center space-x-4">
           <div className="hidden lg:block">
             <a
@@ -126,7 +126,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Responsive Hamburger Toggle */}
           <div className="lg:hidden">
             <button
               onClick={() => setMenuOpen(true)}
@@ -143,4 +142,3 @@ export default function Navbar() {
     </>
   );
 }
- 

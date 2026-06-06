@@ -18,10 +18,8 @@ export default function App() {
       <CustomCursor />
       <Navbar />
 
-      {/* Intro always on top until it finishes */}
       {!introDone && <IntroAnimation onFinish={() => setIntroDone(true)} />}
 
-      {/* Homepage always present (masked reveal) */}
       <Home introDone={introDone} />
 
       <About />
@@ -33,4 +31,3 @@ export default function App() {
     </div>
   );
 }
- 

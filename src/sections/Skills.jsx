@@ -40,13 +40,11 @@ export default function Skills() {
       id="skills"
       className="relative min-h-screen w-full bg-black text-white flex flex-col items-center justify-center py-24 px-6 md:px-12 lg:px-20 overflow-hidden"
     >
-      {/* Decorative Blob Accents */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-1/4 left-[-10%] w-[350px] h-[350px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] opacity-15 blur-[130px] animate-pulse" />
         <div className="absolute bottom-1/4 right-[-10%] w-[350px] h-[350px] rounded-full bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2] opacity-15 blur-[130px] animate-pulse delay-500" />
       </div>
 
-      {/* Header Info */}
       <div className="relative z-10 text-center max-w-2xl mx-auto mb-12">
         <motion.h2
           initial={{ opacity: 0, y: -25 }}
@@ -59,7 +57,6 @@ export default function Skills() {
         </motion.h2>
       </div>
 
-      {/* Interactive Branded Tile Grid */}
       <div className="relative z-10 w-full max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5 sm:gap-6 justify-items-center">
         {skills.map((skill, idx) => (
           <motion.div
@@ -72,14 +69,17 @@ export default function Skills() {
             onMouseLeave={() => setHoveredIndex(null)}
             whileHover={{ y: -6 }}
             style={{
-              borderColor: hoveredIndex === idx ? skill.color : "rgba(255, 255, 255, 0.08)",
-              boxShadow: hoveredIndex === idx 
-                ? `0 15px 30px -10px ${skill.color}33, 0 0 20px ${skill.color}15`
-                : "0 4px 20px -10px rgba(0, 0, 0, 0.4)",
+              borderColor:
+                hoveredIndex === idx
+                  ? skill.color
+                  : "rgba(255, 255, 255, 0.08)",
+              boxShadow:
+                hoveredIndex === idx
+                  ? `0 15px 30px -10px ${skill.color}33, 0 0 20px ${skill.color}15`
+                  : "0 4px 20px -10px rgba(0, 0, 0, 0.4)",
             }}
             className="relative w-full aspect-square max-w-[130px] sm:max-w-[150px] flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl border bg-white/5 backdrop-blur-md cursor-pointer transition-all duration-300 group"
           >
-            {/* Tech Icon wrapper rendering custom brand color */}
             <div
               style={{ color: skill.color }}
               className="text-5xl transition-transform duration-300 group-hover:scale-110"
@@ -87,7 +87,6 @@ export default function Skills() {
               {skill.icon}
             </div>
 
-            {/* Tech Name */}
             <p className="mt-3 text-xs font-semibold text-gray-300 group-hover:text-white transition-colors tracking-wide">
               {skill.name}
             </p>
@@ -96,4 +95,4 @@ export default function Skills() {
       </div>
     </section>
   );
-} 
+}
