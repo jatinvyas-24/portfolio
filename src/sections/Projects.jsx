@@ -8,23 +8,23 @@ import img3 from "../assets/img3.JPG";
 
 const projects = [
   {
-    title: "NK Studio",
+    title: "Exam Notes AI",
     description:
-      "A premium, award-winning design studio portfolio featuring fluid layouts, interactive transitions, and cinematic GSAP timelines.",
-    demoLink: "https://www.nk.studio/",
-    codeLink: "https://github.com/jatinvyas-24/nk-studio",
+      "A premium MERN-stack web application with note generation, revision cheat sheets, Stripe payment integration, and PDF download functionality.",
+    demoLink: "https://examnotesai-client-t0bl.onrender.com/",
+    codeLink: "https://github.com/jatinvyas-24/ExamNotesAi.git",
     image: img1,
-    tags: ["React", "GSAP", "Tailwind CSS", "Vite"],
+    tags: ["React", "Gemini AI", "Stripe","MongoDB"],
     glowColor: "rgba(0, 191, 143, 0.35)",
   },
   {
-    title: "Gamily",
+    title: "Interview-IQ",
     description:
-      "A real-time gaming matchmaker and statistics hub supporting dynamic match lobbies, player networking, and live communication.",
+      "A MERN stack AI-powered interview preparation platform with voice-based interactions, resume upload, and instant performance evaluation.",
     demoLink: "https://gamilyapp.com/",
-    codeLink: "https://github.com/jatinvyas-24/gamily",
+    codeLink: "https://github.com/jatinvyas-24/AI-Interview-Agent.git",
     image: img2,
-    tags: ["Next.js", "TypeScript", "Node.js", "Socket.io"],
+    tags: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
     glowColor: "rgba(56, 132, 211, 0.35)",
   },
   {
@@ -106,20 +106,18 @@ function ProjectCard3D({ project, index }) {
         }}
         className="relative w-full max-w-[420px] aspect-[3/4.2] sm:aspect-[4/5] rounded-3xl cursor-pointer overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md transition-colors duration-300 hover:border-white/20"
       >
-        <div className="absolute inset-0 w-full h-[48%] overflow-hidden bg-black/40">
+        <div className="absolute top-4 inset-x-4 h-[42%] overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-inner">
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 ease-out"
+            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out"
             style={{
               transform: hovered
-                ? "scale(1.08) translateZ(10px)"
+                ? "scale(1.06) translateZ(10px)"
                 : "scale(1) translateZ(0px)",
             }}
             loading="lazy"
           />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-black/30 z-1" />
         </div>
 
         <motion.div
@@ -135,7 +133,7 @@ function ProjectCard3D({ project, index }) {
             transform: "translateZ(30px)",
             transformStyle: "preserve-3d",
           }}
-          className="absolute inset-x-0 bottom-0 h-[54%] p-6 flex flex-col justify-between bg-[#0e0e0e] z-10"
+          className="absolute inset-x-0 bottom-0 h-[54%] p-6 flex flex-col justify-between bg-[#0c0c0e]/95 backdrop-blur-md border-t border-white/5 z-10"
         >
           <div className="flex flex-col gap-2">
             <div

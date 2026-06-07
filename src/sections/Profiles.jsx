@@ -5,47 +5,32 @@ import { motion } from "framer-motion";
 
 const profiles = [
   {
-    name: "LinkedIn",
     icon: <FaLinkedinIn />,
     handle: "jatin vyas",
-    description:
-      "Professional networking, corporate updates, and industry connection hub.",
     url: "https://www.linkedin.com/in/jatin-vyas-1a4043327/",
     color: "#0A66C2",
   },
   {
-    name: "LeetCode",
     icon: <SiLeetcode />,
     handle: "jatin_vyas24",
-    description:
-      "Algorithmic problem-solving profile, DSA challenges, and technical skills refinement.",
     url: "https://leetcode.com/u/jatin_vyas24/",
     color: "#FFA116",
   },
   {
-    name: "GitHub",
     icon: <FaGithub />,
     handle: "jatinvyas-24",
-    description:
-      "Open-source contributions, developer projects, and version control repository hosting.",
     url: "https://github.com/jatinvyas-24",
     color: "#FFFFFF",
   },
   {
-    name: "CodeChef",
     icon: <SiCodechef />,
     handle: "jatinvyas_24",
-    description:
-      "Competitive programming contests, problem-solving, and globally ranked tournaments.",
     url: "https://www.codechef.com/users/jatinvyas_24",
     color: "#D1A153",
   },
   {
-    name: "GeeksforGeeks",
     icon: <SiGeeksforgeeks />,
     handle: "jatinvyas24",
-    description:
-      "Algorithm practice, data structures, and computer science tutorial platforms.",
     url: "https://www.geeksforgeeks.org/profile/jatinvyas24?tab=activity",
     color: "#2F8D46",
   },
@@ -79,7 +64,7 @@ export default function Profiles() {
       <div className="relative z-10 w-full max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 justify-items-center">
         {profiles.map((profile, idx) => (
           <motion.a
-            key={profile.name}
+            key={profile.handle}
             href={profile.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -118,17 +103,9 @@ export default function Profiles() {
             </div>
 
             <div className="flex flex-col justify-center relative z-10 w-full overflow-hidden">
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-gray-400 group-hover:text-white/80 transition-colors">
-                {profile.name}
-              </span>
-
               <h3 className="text-base sm:text-lg font-bold text-white tracking-wide truncate w-full mt-0.5">
                 {profile.handle}
               </h3>
-
-              <p className="text-[11px] text-gray-400 mt-1 leading-relaxed line-clamp-2 group-hover:text-gray-300 transition-colors">
-                {profile.description}
-              </p>
             </div>
           </motion.a>
         ))}
