@@ -21,20 +21,20 @@ const projects = [
     title: "Interview-IQ",
     description:
       "A MERN stack AI-powered interview preparation platform with voice-based interactions, resume upload, and instant performance evaluation.",
-    demoLink: "https://gamilyapp.com/",
+    demoLink: "https://ai-interview-agent-client-ry2r.onrender.com",
     codeLink: "https://github.com/jatinvyas-24/AI-Interview-Agent.git",
     image: img2,
     tags: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
     glowColor: "rgba(56, 132, 211, 0.35)",
   },
   {
-    title: "Hungry Tiger",
+    title: "Weather Dashboard",
     description:
-      "An elegant, interactive culinary e-commerce ordering system built with custom cart tracking, instant validations, and fast APIs.",
-    demoLink: "https://www.eathungrytiger.com/",
-    codeLink: "https://github.com/jatinvyas-24/hungry-tiger",
+      "A modern weather application that provides real-time weather updates and 5-day forecasts using the OpenWeather API.",
+    demoLink: "https://weather-app-ftwn.onrender.com",
+    codeLink: "https://github.com/jatinvyas-24/weather-app.git",
     image: img3,
-    tags: ["React", "FastAPI", "PostgreSQL", "Tailwind"],
+    tags: ["HTML", "CSS", "Javascript", "Openweather API"],
     glowColor: "rgba(220, 147, 23, 0.35)",
   },
 ];
